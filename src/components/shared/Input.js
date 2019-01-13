@@ -22,14 +22,14 @@ const styles = {
     color: "#000",
     paddingRight: 5,
     paddingLeft: 5,
-    fontSize: 18,
+    fontSize: 12,
     lineHeight: 23,
     flex: 2,
     height: 50,
     textAlignVertical: "center"
   },
   label: {
-    fontSize: 18,
+    fontSize: 12,
     paddingLeft: 20,
     flex: 1
   },
