@@ -4,9 +4,13 @@ import Card from "./shared/Card";
 import CardSection from "./shared/CardSection";
 import Button from "./shared/Button";
 import Input from "./shared/Input";
+import { connect } from "react-redux";
+import { onEmailChange } from "./../actions/Index";
 
 class LoginForm extends Component {
-  onEmailChange(text) {}
+  onEmailChange(text) {
+    this.props.onEmailChange(text);
+  }
 
   render() {
     return (
@@ -29,4 +33,7 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm;
+export default connect(
+  null,
+  { onEmailChange }
+)(LoginForm);
