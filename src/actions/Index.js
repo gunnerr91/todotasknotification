@@ -7,6 +7,7 @@ import {
 } from "./Types";
 import firebase from "@firebase/app";
 import "@firebase/auth";
+import { Actions } from "react-native-router-flux";
 
 export const onEmailChange = text => {
   return {
@@ -48,6 +49,8 @@ const onLoginSuccess = (dispatch, user) => {
     type: LOG_IN_SUCCESS,
     payload: user
   });
+
+  Actions.main();
 };
 
 const onLoginFailure = dispatch => {
