@@ -1,4 +1,4 @@
-import { UPDATE_TASK } from "../actions/Types";
+import { UPDATE_TASK, UPDATE_TASK_SUCCESS } from "../actions/Types";
 
 const initial_state = {
   task: "",
@@ -14,6 +14,8 @@ export default (state = initial_state, action) => {
         ...state,
         [action.payload.prop]: action.payload.value
       };
+    case UPDATE_TASK_SUCCESS:
+      return initial_state;
     default:
       return {
         state

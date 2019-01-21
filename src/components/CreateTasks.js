@@ -5,9 +5,13 @@ import CardSection from "./shared/CardSection";
 import Input from "./shared/Input";
 import Button from "./shared/Button";
 import { connect } from "react-redux";
-import { updateTask } from "./../actions/CreateTaskActions";
+import { updateTask, createTask } from "./../actions/CreateTaskActions";
 
 class CreateTasks extends Component {
+  onCreateTask() {
+    const { task, notes, deadline } = this.props;
+    this.props.createTask({ task, notes, deadline: deadline || "Monday" });
+  }
   render() {
     return (
       <Card>
@@ -49,7 +53,7 @@ class CreateTasks extends Component {
           </Picker>
         </CardSection>
         <CardSection>
-          <Button>Create</Button>
+          <Button onPress={this.onCreateTask.bind(this)}>Create</Button>
         </CardSection>
       </Card>
     );
@@ -67,5 +71,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { updateTask }
+  { updateTask, createTask }
 )(CreateTasks);
